@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[My Octopress Blog]]></title>
+  <link href="http://snowmantw.github.com/atom.xml" rel="self"/>
+  <link href="http://snowmantw.github.com/"/>
+  <updated>2012-06-17T18:15:20+08:00</updated>
+  <id>http://snowmantw.github.com/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Yet Another Coder]]></title>
+    <link href="http://snowmantw.github.com/blog/2012/06/17/yet-another-coder/"/>
+    <updated>2012-06-17T15:07:00+08:00</updated>
+    <id>http://snowmantw.github.com/blog/2012/06/17/yet-another-coder</id>
+    <content type="html"><![CDATA[<h2>Profile</h2>
+
+<h3>snowmantw ( Greg Weng )</h3>
+
+<pre><code>✝  Christian
+:  Vimmer
+/  Linux User
+λ  Haskell Learner
+G  Self-Studier
+JS Developer
+@  snowmantw at gmail.com  
+✎  Literure Fan  
+♪  Classical Music Fan
+✍  Master's Degree Student → Dept. of Computer Science, NCCU  
+台  Taiwanese
+</code></pre>
+
+<hr />
+
+<h2>Public Projects:</h2>
+
+<ul>
+<li><a href="https://github.com/snowmantw/FunTang">FunTang</a>  : functional features added CoffeeScript</li>
+<li><a href="https://github.com/snowmantw/Fluorine">Fluorine</a> : Arrow in Javascript with fully event-driven features</li>
+</ul>
+
+
+<hr />
+
+<h2>Favorite Books:</h2>
+
+<ul>
+<li>Nineteen Eighty-Four by George Orwell</li>
+<li>A Song of Ice and Fire by George R. R. Martin</li>
+<li>The Chronicles of Narnia by C.S. Lewis</li>
+<li>銀河英雄伝説 by 田中芳樹</li>
+<li>萬曆十五年 by 黃仁宇</li>
+<li>翻譯者 by 賴香吟 ( 中篇小說 )</li>
+<li>銃夢 by 木城ゆきと</li>
+<li>風の谷のナウシカ by 宮崎駿</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
