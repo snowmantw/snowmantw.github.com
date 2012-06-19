@@ -9,33 +9,30 @@ var github = (function(){
   }
   return {
     showRepos: function(options){
-      $.ajax({
-          url: "https://api.github.com/users/"+options.user+"/repos"
-        , headers: '"Origin": http://snowmantw.github.com'
-        , type: 'GET'
-        , dataType:'json'
-        , error: function (err) { $(options.target + ' li.loading').addClass('error').text("Error loading feed"); }
-        , success: function(xhr) {
-          var repos = [];
+      jQuery.getJSON( "https://api.github.com/users/"+options.user+"/repos?callback=?"
+               , function(res){
+                  var data = res.data;
+                  var repos = [];
 
-          var data = JSON.parse(xhr.responseText);
+                  for (var i = 0; i < data.length; i++) {
+                    if (options.skip_forks && data[i].fork) { continue; }
+                    repos.push(data[i]);
+                  }
+                  repos.sort(function(a, b) {
+                    var aDate = new Date(a.pushed_at).valueOf(),
+                        bDate = new Date(b.pushed_at).valueOf();
 
-          for (var i = 0; i < data.length; i++) {
-            if (options.skip_forks && data[i].fork) { continue; }
-            repos.push(data[i]);
-          }
-          repos.sort(function(a, b) {
-            var aDate = new Date(a.pushed_at).valueOf(),
-                bDate = new Date(b.pushed_at).valueOf();
+                    if (aDate === bDate) { return 0; }
+                    return aDate > bDate ? -1 : 1;
+                  });
 
-            if (aDate === bDate) { return 0; }
-            return aDate > bDate ? -1 : 1;
-          });
-
-          if (options.count) { repos.splice(options.count); }
-          render(options.target, repos);
-        }
-      });
+                  if (options.count) { repos.splice(options.count); }
+                  render(options.target, repos);
+               
+               
+               })
+       .fail(function (err) { $(options.target + ' li.loading')
+                                    .addClass('error').text("Error loading feed"); });
     }
   };
 })();
