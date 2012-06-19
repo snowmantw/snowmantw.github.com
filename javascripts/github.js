@@ -11,11 +11,13 @@ var github = (function(){
     showRepos: function(options){
       $.ajax({
           url: "https://api.github.com/users/"+options.user+"/repos"
-        , type: 'json'
+        , type: 'GET'
+        , dataType:'json'
         , error: function (err) { $(options.target + ' li.loading').addClass('error').text("Error loading feed"); }
-        , success: function(data) {
+        , success: function(xhr) {
           var repos = [];
-          if (!data || !data.repositories) { return; }
+
+          var data = JSON.parse(xhr.responseText);
 
           for (var i = 0; i < data.length; i++) {
             if (options.skip_forks && data[i].fork) { continue; }
