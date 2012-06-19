@@ -11,6 +11,7 @@ var github = (function(){
     showRepos: function(options){
       $.ajax({
           url: "https://api.github.com/users/"+options.user+"/repos"
+        , headers: '"Origin": http://snowmantw.github.com'
         , type: 'GET'
         , dataType:'json'
         , error: function (err) { $(options.target + ' li.loading').addClass('error').text("Error loading feed"); }
