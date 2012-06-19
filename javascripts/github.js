@@ -10,7 +10,7 @@ var github = (function(){
   return {
     showRepos: function(options){
       $.ajax({
-          url: "http://api.github.com/users/"+options.user
+          url: "http://api.github.com/users/"+options.user+"/repos"
         , type: 'json'
         , error: function (err) { $(options.target + ' li.loading').addClass('error').text("Error loading feed"); }
         , success: function(data) {
@@ -18,7 +18,7 @@ var github = (function(){
           if (!data || !data.repositories) { return; }
 
           for (var i = 0; i < data.length; i++) {
-            if (options.skip_forks && data.repositories[i].fork) { continue; }
+            if (options.skip_forks && data[i].fork) { continue; }
             repos.push(data[i]);
           }
           repos.sort(function(a, b) {
