@@ -10,15 +10,16 @@ var github = (function(){
   return {
     showRepos: function(options){
       $.ajax({
-          url: "http://api.github.com/users/"+options.user+"/repos?callback=?"
-        , type: 'jsonp'
+          url: "http://api.github.com/users/"+options.user
+        , type: 'json'
         , error: function (err) { $(options.target + ' li.loading').addClass('error').text("Error loading feed"); }
         , success: function(data) {
           var repos = [];
           if (!data || !data.repositories) { return; }
-          for (var i = 0; i < data.repositories.length; i++) {
+
+          for (var i = 0; i < data.length; i++) {
             if (options.skip_forks && data.repositories[i].fork) { continue; }
-            repos.push(data.repositories[i]);
+            repos.push(data[i]);
           }
           repos.sort(function(a, b) {
             var aDate = new Date(a.pushed_at).valueOf(),
