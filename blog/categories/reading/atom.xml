@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Snowmantw's Blog]]></title>
-  <link href="http://snowmantw.github.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Reading | Snowmantw's Blog]]></title>
+  <link href="http://snowmantw.github.com/blog/categories/reading/atom.xml" rel="self"/>
   <link href="http://snowmantw.github.com/"/>
   <updated>2012-06-22T22:02:15+08:00</updated>
   <id>http://snowmantw.github.com/</id>
@@ -32,7 +32,7 @@
 是否真的重視如今的自由呢？看 Apple 那樣的封閉開發者市場，developer 與 user 卻不是很在意。又像 Facebook ，
 本身就是一個封閉的巨大論壇，開發與使用者一樣不在意。（連搜尋也無法搜到資訊！這也是我厭惡的地方。
 更糟糕的是現在有些服務會認為每個人都會有，因此只提供 Facebook 服務的公開資訊。
-相較之下網頁與 Mail 至少是公開的，我可以用 Gmail/Hotmail/學校信箱/自己架&#8230;）</p>
+相較之下網頁與 Mail 至少是公開的，我可以用 Gmail/Hotmail/學校信箱/自己架...）</p>
 
 <p>身為一個學習者，受益於 OSS 界眾多的時候，也應該思考像這樣的理念之爭，尤其是會真槍實彈影響到每個人的自由時，
 自己該怎樣思考、怎麼去作。又回來看看，各資訊學系的同學是否又真正了解這些重要的問題？</p>
@@ -65,56 +65,6 @@
 ——我不是猶太人<br/>
 當他們要追殺我<br/>
 再也沒有人為我說話了<br/></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Yet Another Coder]]></title>
-    <link href="http://snowmantw.github.com/blog/2012/06/17/yet-another-coder/"/>
-    <updated>2012-06-17T15:07:00+08:00</updated>
-    <id>http://snowmantw.github.com/blog/2012/06/17/yet-another-coder</id>
-    <content type="html"><![CDATA[<h2>Profile</h2>
-
-<h3>snowmantw ( Greg Weng )</h3>
-
-<pre><code>✝  Christian
-:  Vimmer
-/  Linux User
-λ  Haskell Learner
-G  Self-Studier
-$  Javascript Developer
-@  snowmantw at gmail.com  
-✎  Literure Fan  
-♪  Classical Music Fan
-✍  Master's Degree Student → Dept. of Computer Science, NCCU  
-台  Taiwanese
-</code></pre>
-
-<hr />
-
-<h2>Public Projects:</h2>
-
-<ul>
-<li><a href="https://github.com/snowmantw/FunTang">FunTang</a>  : functional features added CoffeeScript</li>
-<li><a href="https://github.com/snowmantw/Fluorine">Fluorine</a> : Arrow in Javascript with fully event-driven features</li>
-</ul>
-
-
-<hr />
-
-<h2>Favorite Books:</h2>
-
-<ul>
-<li>Nineteen Eighty-Four by George Orwell</li>
-<li>A Song of Ice and Fire by George R. R. Martin</li>
-<li>The Chronicles of Narnia by C.S. Lewis</li>
-<li>銀河英雄伝説 by 田中芳樹</li>
-<li>萬曆十五年 by 黃仁宇</li>
-<li>翻譯者 by 賴香吟 ( 中篇小說 )</li>
-<li>銃夢 by 木城ゆきと</li>
-<li>風の谷のナウシカ by 宮崎駿</li>
-</ul>
-
 ]]></content>
   </entry>
   
