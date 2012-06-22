@@ -9,7 +9,9 @@
   <meta name="author" content="snowmantw">
 
   
-  <meta name="description" content="這篇算是舊文章了。所謂的萬聖節文件，是在 1998 年時從微軟內部洩漏的一份文件，其中 披漏了微軟總部Redmond, 在未來預備對付Linux及開放性原始碼軟體的策略, 消息來源希望保密. 我為這份文件在萬聖節其間做了些註解 這邊所謂的「我」指的是 Eric S. Raymond ，Open &hellip;">
+  <meta name="description" content="這篇文章講述作者自己測試 GUI 程式的經驗，
+他覺得軟體的測試在時間長度的概念上可以借鑒硬體的測試概念分三種時間相關的測試概念 短：功能性測試，包括 Unit Testing 與 Integration Testing。這邊可以除去絕大部分的問題。
+中：用來測試與減少隨機錯誤。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +69,58 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/06/22/reading-applying-hardware-testing-concepts-to-software/">Reading: Applying Hardware Testing Concepts to Software</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-22T22:13:00+08:00" pubdate data-updated="true">Jun 22<span>nd</span>, 2012</time>
+        
+         | <a href="/blog/2012/06/22/reading-applying-hardware-testing-concepts-to-software/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.dodgycoder.net/2012/06/applying-hardware-testing-concepts-to.html">這篇文章</a>講述作者自己測試 GUI 程式的經驗，
+他覺得軟體的測試在時間長度的概念上可以借鑒硬體的測試概念分三種時間相關的測試概念</p>
+
+<ol>
+<li>短：功能性測試，包括 Unit Testing 與 Integration Testing。這邊可以除去絕大部分的問題。</li>
+<li>中：用來測試與減少隨機錯誤。隨機錯誤不太可能完全清除，但可以儘量減少、消除到機率合乎標準</li>
+<li>長：將軟體執行到超乎一般時間的長，用來測試諸如記憶體洩漏、效能下降等問題。
+
+<pre><code>   作者自己的經驗是他的程式一般只會開半小時，他故意開著兩個小時作測試，
+   然後在第一個小時時就發現了記憶體洩漏與效能下降的問題，並修正之。
+</code></pre></li>
+</ol>
+
+
+<p>其他概念可以上作者文章看；他那張引自 wikipedia 的圖還蠻好的</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -244,6 +298,10 @@ $  Javascript Developer
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/06/22/reading-applying-hardware-testing-concepts-to-software/">Reading: Applying hardware testing concepts to software</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/06/22/helloween-documents-re-reading/">Helloween Documents Re-reading</a>
       </li>
     
@@ -278,6 +336,13 @@ $  Javascript Developer
             
 
             <li class="category">
+                  <a class='category' href='/blog/categories/reading-notes/'>Reading Notes</a>
+            </li>
+        
+            
+            
+
+            <li class="category">
                   <a class='category' href='/blog/categories/software-liberty/'>Software Liberty</a>
             </li>
         
@@ -286,6 +351,13 @@ $  Javascript Developer
 
             <li class="category">
                   <a class='category' href='/blog/categories/thinking/'>Thinking</a>
+            </li>
+        
+            
+            
+
+            <li class="category">
+                  <a class='category' href='/blog/categories/software-testing/'>Software Testing</a>
             </li>
         
       
