@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Software Testing | Snowmantw's Blog]]></title>
   <link href="http://snowmantw.github.com/blog/categories/software-testing/atom.xml" rel="self"/>
   <link href="http://snowmantw.github.com/"/>
-  <updated>2012-06-22T22:24:08+08:00</updated>
+  <updated>2012-06-23T17:40:20+08:00</updated>
   <id>http://snowmantw.github.com/</id>
   <author>
     <name><![CDATA[snowmantw]]></name>
@@ -18,7 +18,7 @@
     <link href="http://snowmantw.github.com/blog/2012/06/22/reading-applying-hardware-testing-concepts-to-software/"/>
     <updated>2012-06-22T22:13:00+08:00</updated>
     <id>http://snowmantw.github.com/blog/2012/06/22/reading-applying-hardware-testing-concepts-to-software</id>
-    <content type="html"><![CDATA[<p><a href="http://www.dodgycoder.net/2012/06/applying-hardware-testing-concepts-to.html">這篇文章</a>講述作者自己測試 GUI 程式的經驗，
+    <content type="html"><![CDATA[<p><a href="http://www.dodgycoder.net/2012/06/applying-hardware-testing-concepts-to.html">這篇文章</a>講述作者 <a href="http://www.blogger.com/profile/14418022725678218844">Dodgy_Coder</a> 自己測試 GUI 程式的經驗，
 他覺得軟體的測試在時間長度的概念上可以借鑒硬體的測試概念分三種時間相關的測試概念</p>
 
 <ol>
