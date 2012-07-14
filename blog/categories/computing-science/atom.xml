@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Computing Science | Snowmantw's Blog]]></title>
   <link href="http://snowmantw.github.com/blog/categories/computing-science/atom.xml" rel="self"/>
   <link href="http://snowmantw.github.com/"/>
-  <updated>2012-07-14T09:54:41+08:00</updated>
+  <updated>2012-07-14T09:57:55+08:00</updated>
   <id>http://snowmantw.github.com/</id>
   <author>
     <name><![CDATA[snowmantw]]></name>
@@ -24,7 +24,12 @@
 <iframe src="https://docs.google.com/file/d/0BzqwG7n2gs71ek9LTDBPczZPSjA/preview" width="640" height="480"></iframe>
 
 
-<p>最近為正在了解 <a href="http://www.haskell.org/haskellwiki/Functional_Reactive_Programming">Functional Reactive Programming</a> ，過程中很多細節要思考。
+
+
+<br/>
+
+
+<p>最近正在了解 <a href="http://www.haskell.org/haskellwiki/Functional_Reactive_Programming">Functional Reactive Programming</a> ，過程中很多細節要思考。
 希望了解後可以更好的開發 Haskell 應用程式。</p>
 ]]></content>
   </entry>
