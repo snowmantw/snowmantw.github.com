@@ -4,7 +4,7 @@
   <title><![CDATA[Snowmantw's Blog]]></title>
   <link href="http://snowmantw.github.com/atom.xml" rel="self"/>
   <link href="http://snowmantw.github.com/"/>
-  <updated>2012-06-23T17:40:20+08:00</updated>
+  <updated>2012-07-14T09:50:45+08:00</updated>
   <id>http://snowmantw.github.com/</id>
   <author>
     <name><![CDATA[snowmantw]]></name>
@@ -12,6 +12,22 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[A Introduction to Haskell Components]]></title>
+    <link href="http://snowmantw.github.com/blog/2012/07/14/a-introduction-to-haskell-components/"/>
+    <updated>2012-07-14T09:10:00+08:00</updated>
+    <id>http://snowmantw.github.com/blog/2012/07/14/a-introduction-to-haskell-components</id>
+    <content type="html"><![CDATA[<p>這是我於 <a href="http://registrano.com/events/fpug-sig-1">Functional Programming SIG #1</a> 中介紹 <a href="http://www.haskell.org/haskellwiki/Typeclassopedia#Monad">Monad</a> 、 <a href="http://www.haskell.org/haskellwiki/Typeclassopedia#Arrow">Arrow</a> 與
+其他 Haskell 運算元件的簡報。分為 <a href="https://docs.google.com/open?id=0BzqwG7n2gs71blE5V2pzR29WUDQ">PDF</a> 與 <a href="https://docs.google.com/open?id=0BzqwG7n2gs71ek9LTDBPczZPSjA">MS 2007</a> 檔案格式，採用 <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/tw/">CC BY-NC-SA</a> 方式授權。</p>
+
+<iframe src="https://docs.google.com/file/d/0BzqwG7n2gs71ek9LTDBPczZPSjA/preview" width="640" height="480"></iframe>
+
+
+<p>最近為正在了解 <a href="http://www.haskell.org/haskellwiki/Functional_Reactive_Programming">Functional Reactive Programming</a> ，過程中很多細節要思考。
+希望了解後可以更好的開發 Haskell 應用程式。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[FWD: I Feel Sorry For Computer Science Departments]]></title>
