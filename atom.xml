@@ -4,7 +4,7 @@
   <title><![CDATA[Snowmantw's Blog]]></title>
   <link href="http://snowmantw.github.com/atom.xml" rel="self"/>
   <link href="http://snowmantw.github.com/"/>
-  <updated>2012-09-19T16:57:25+08:00</updated>
+  <updated>2012-09-19T20:57:56+08:00</updated>
   <id>http://snowmantw.github.com/</id>
   <author>
     <name><![CDATA[snowmantw]]></name>
@@ -12,6 +12,92 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Note: Cmake Learning #1]]></title>
+    <link href="http://snowmantw.github.com/blog/2012/09/19/note-cmake-learning-number-1/"/>
+    <updated>2012-09-19T20:32:00+08:00</updated>
+    <id>http://snowmantw.github.com/blog/2012/09/19/note-cmake-learning-number-1</id>
+    <content type="html"><![CDATA[<ul>
+<li>參考資源
+
+<ul>
+<li><a href="http://zh.wikibooks.org/wiki/CMake_%E5%85%A5%E9%96%80">Cmake 入門</a></li>
+<li><a href="http://www.cmake.org/cmake/help/v2.8.8/cmake.html#section_Commands">Cmake 官方網站：命令列表</a></li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li>如果要尋找系統中有沒有特定函式庫，首先要確定有該函式庫的模組。可用 <code>cmake --help-module-list</code> 協助尋找是否該模組存在</li>
+<li>如果有該模組，可以用 <code>find_package</code> 命令去找。注意該命令給定的名字必須符合前述搜尋模組給的名字，而不是系統中套件名稱。例如</li>
+</ul>
+
+
+<pre>
+     # Find GLUT package in system. 
+     # Not system package name like "freeglut3-dev".
+     find_package (GLUT REQUIRED) 
+</pre>
+
+
+<ul>
+<li>如果要作不符合條件即中斷 Cmake 執行，可以使用 <code>message(FATAL_ERROR "&lt;message&gt;")</code> 的方式印出錯誤後中止執行。
+例如前述尋找系統套件，找不到就可以用這種方式報錯離開</li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li><code>target_link_library</code> 是該 Cmake 所針對的編譯單元，需要連結哪些函式庫</li>
+<li><code>add_library</code> 則是把該編譯單元包成函式庫，兩者目的相關方向相反</li>
+<li><code>target_link_library</code> 可以指定編譯器連結參數，例如</li>
+</ul>
+
+
+<pre>
+     # Require compiler compiling with these arguments.
+     target_link_libraries(CGHW1 -lGL -lglut -lGLU)
+</pre>
+
+
+<ul>
+<li>這邊的連結參數會影響產生的 Makefile 中所下參數，所以是必要的</li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li>Cmake 2.8 還是需要在 <code>else</code> 這個關鍵字後面接上條件的樣子。不能如前面那樣省略，而是必需變成 <code>else(&lt;condition&gt;)</code></li>
+<li>推薦使用所謂 &#8220;Out-of-source Build&#8221; ，將建置目錄與原始碼目錄分開</li>
+<li>Cmake 執行時指定目錄，會自動找尋其中是否有 CMakeLists.txt 並利用執行</li>
+<li>Cmake 範例的結構中，看起來是每個模組或其他編譯單元的目錄中都各有一個 CMakeLists.txt ，整個專案再一個。
+例如「Cmake 入門」中的<a href="http://zh.wikibooks.org/wiki/CMake_%E5%85%A5%E9%96%80/%E5%BB%BA%E7%BD%AE%E8%88%87%E9%80%A3%E7%B5%90%E7%A8%8B%E5%BC%8F%E5%BA%AB">範例</a>:</li>
+</ul>
+
+
+<pre>
+    lib1/
+        src/
+            app/
+                CMakeLists.txt
+                main.c
+            calc/
+                CMakeLists.txt
+                calc.c
+                calc.h
+    CMakeLists.txt
+</pre>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Note: Yesod Web Framework #1]]></title>

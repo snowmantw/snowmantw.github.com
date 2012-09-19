@@ -5,11 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: Tech Notes - Snowmantw's Blog</title>
+  <title>Note: Cmake Learning #1 - Snowmantw's Blog</title>
   <meta name="author" content="snowmantw">
 
   
-  <meta name="description" content="Category: Tech Notes">
+  <meta name="description" content="參考資源 Cmake 入門
+Cmake 官方網站：命令列表 如果要尋找系統中有沒有特定函式庫，首先要確定有該函式庫的模組。可用 cmake --help-module-list 協助尋找是否該模組存在
+如果有該模組，可以用 find_package 命令去找。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://snowmantw.github.comblog/categories/tech-notes/">
+  <link rel="canonical" href="http://snowmantw.github.com/blog/2012/09/19/note-cmake-learning-number-1/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
@@ -66,50 +68,168 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Tech Notes</h1>
+    
+      <h1 class="entry-title">Note: Cmake Learning #1</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-19T20:32:00+08:00" pubdate data-updated="true">Sep 19<span>th</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><ul>
+<li>參考資源
 
-  
-  <h2>2012</h2>
-
-<article>
-  
-<h1><a href="/blog/2012/09/19/note-cmake-learning-number-1/">Note: Cmake Learning #1</a></h1>
-<time datetime="2012-09-19T20:32:00+08:00" pubdate><span class='month'>Sep</span> <span class='day'>19</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/cmake/'>Cmake</a>, <a class='category' href='/blog/categories/tech-notes/'>Tech Notes</a></span>
-</footer>
+<ul>
+<li><a href="http://zh.wikibooks.org/wiki/CMake_%E5%85%A5%E9%96%80">Cmake 入門</a></li>
+<li><a href="http://www.cmake.org/cmake/help/v2.8.8/cmake.html#section_Commands">Cmake 官方網站：命令列表</a></li>
+</ul>
+</li>
+</ul>
 
 
-</article>
+<hr />
+
+<ul>
+<li>如果要尋找系統中有沒有特定函式庫，首先要確定有該函式庫的模組。可用 <code>cmake --help-module-list</code> 協助尋找是否該模組存在</li>
+<li>如果有該模組，可以用 <code>find_package</code> 命令去找。注意該命令給定的名字必須符合前述搜尋模組給的名字，而不是系統中套件名稱。例如</li>
+</ul>
 
 
-
-<article>
-  
-<h1><a href="/blog/2012/09/19/note-yesod-web-framework-1/">Note: Yesod Web Framework #1</a></h1>
-<time datetime="2012-09-19T13:19:00+08:00" pubdate><span class='month'>Sep</span> <span class='day'>19</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/haskell/'>Haskell</a>, <a class='category' href='/blog/categories/tech-notes/'>Tech Notes</a>, <a class='category' href='/blog/categories/web-application/'>Web Application</a></span>
-</footer>
+<pre>
+     # Find GLUT package in system. 
+     # Not system package name like "freeglut3-dev".
+     find_package (GLUT REQUIRED) 
+</pre>
 
 
-</article>
+<ul>
+<li>如果要作不符合條件即中斷 Cmake 執行，可以使用 <code>message(FATAL_ERROR "&lt;message&gt;")</code> 的方式印出錯誤後中止執行。
+例如前述尋找系統套件，找不到就可以用這種方式報錯離開</li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li><code>target_link_library</code> 是該 Cmake 所針對的編譯單元，需要連結哪些函式庫</li>
+<li><code>add_library</code> 則是把該編譯單元包成函式庫，兩者目的相關方向相反</li>
+<li><code>target_link_library</code> 可以指定編譯器連結參數，例如</li>
+</ul>
+
+
+<pre>
+     # Require compiler compiling with these arguments.
+     target_link_libraries(CGHW1 -lGL -lglut -lGLU)
+</pre>
+
+
+<ul>
+<li>這邊的連結參數會影響產生的 Makefile 中所下參數，所以是必要的</li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li>Cmake 2.8 還是需要在 <code>else</code> 這個關鍵字後面接上條件的樣子。不能如前面那樣省略，而是必需變成 <code>else(&lt;condition&gt;)</code></li>
+<li>推薦使用所謂 &#8220;Out-of-source Build&#8221; ，將建置目錄與原始碼目錄分開</li>
+<li>Cmake 執行時指定目錄，會自動找尋其中是否有 CMakeLists.txt 並利用執行</li>
+<li>Cmake 範例的結構中，看起來是每個模組或其他編譯單元的目錄中都各有一個 CMakeLists.txt ，整個專案再一個。
+例如「Cmake 入門」中的<a href="http://zh.wikibooks.org/wiki/CMake_%E5%85%A5%E9%96%80/%E5%BB%BA%E7%BD%AE%E8%88%87%E9%80%A3%E7%B5%90%E7%A8%8B%E5%BC%8F%E5%BA%AB">範例</a>:</li>
+</ul>
+
+
+<pre>
+    lib1/
+        src/
+            app/
+                CMakeLists.txt
+                main.c
+            calc/
+                CMakeLists.txt
+                calc.c
+                calc.h
+    CMakeLists.txt
+</pre>
+
+
 
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">snowmantw</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-19T20:32:00+08:00" pubdate data-updated="true">Sep 19<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/cmake/'>Cmake</a>, <a class='category' href='/blog/categories/tech-notes/'>Tech Notes</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/09/19/note-yesod-web-framework-1/" title="Previous Post: Note: Yesod Web Framework #1">&laquo; Note: Yesod Web Framework #1</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -317,7 +437,10 @@
       var disqus_shortname = 'snowmantws-blog';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://snowmantw.github.com/blog/2012/09/19/note-cmake-learning-number-1/';
+        var disqus_url = 'http://snowmantw.github.com/blog/2012/09/19/note-cmake-learning-number-1/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
