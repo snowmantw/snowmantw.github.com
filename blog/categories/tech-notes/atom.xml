@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Haskell | Snowmantw's Blog]]></title>
-  <link href="http://snowmantw.github.com/blog/categories/haskell/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Tech Notes | Snowmantw's Blog]]></title>
+  <link href="http://snowmantw.github.com/blog/categories/tech-notes/atom.xml" rel="self"/>
   <link href="http://snowmantw.github.com/"/>
   <updated>2012-09-19T16:57:25+08:00</updated>
   <id>http://snowmantw.github.com/</id>
@@ -41,27 +41,6 @@
 <li>從目前看到的只能說 mkYesodDispatch 建立網站本身，makeApplication 建立整個 WAI 應用。( WAI: Web Server 與 Application 的介面<a href="http://www.yesodweb.com/book/web-application-interface" title="Yesod Official Site">^1</a> )</li>
 </ul>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[An Introduction to Haskell Components]]></title>
-    <link href="http://snowmantw.github.com/blog/2012/07/14/an-introduction-to-haskell-components/"/>
-    <updated>2012-07-14T09:10:00+08:00</updated>
-    <id>http://snowmantw.github.com/blog/2012/07/14/an-introduction-to-haskell-components</id>
-    <content type="html"><![CDATA[<p>這是我於 <a href="http://registrano.com/events/fpug-sig-1">Functional Programming SIG #1</a> 中介紹 <a href="http://www.haskell.org/haskellwiki/Typeclassopedia#Monad">Monad</a> 、 <a href="http://www.haskell.org/haskellwiki/Typeclassopedia#Arrow">Arrow</a> 與
-其他 Haskell 運算元件的簡報。分為 <a href="https://docs.google.com/open?id=0BzqwG7n2gs71blE5V2pzR29WUDQ">PDF</a> 與 <a href="https://docs.google.com/open?id=0BzqwG7n2gs71ek9LTDBPczZPSjA">MS 2007</a> 檔案格式，採用 <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/tw/">CC BY-NC-SA</a> 方式授權。</p>
-
-<iframe src="https://docs.google.com/file/d/0BzqwG7n2gs71ek9LTDBPczZPSjA/preview" width="640" height="480"></iframe>
-
-
-
-
-<br/>
-
-
-<p>最近正在了解 <a href="http://www.haskell.org/haskellwiki/Functional_Reactive_Programming">Functional Reactive Programming</a> ，過程中很多細節要思考。
-希望了解後可以更好的開發 Haskell 應用程式。</p>
 ]]></content>
   </entry>
   

@@ -5,11 +5,15 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: Reading Notes - Snowmantw's Blog</title>
+  <title>Note: Computer Graphics #1 - Snowmantw's Blog</title>
   <meta name="author" content="snowmantw">
 
   
-  <meta name="description" content="Category: Reading Notes">
+  <meta name="description" content="Shading 是指在面與線的基礎上增加了光線與材質的交互作用層
+Texture 則是加在表面呈現出材質的效果
+Framebuffer 記憶體將儲存運算後的資料，然後顯示器朝之要這些資料並畫出來
+Framebuffer 如何更新是重點之一
+Model-Rendering-Animation &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +22,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://snowmantw.github.comblog/categories/reading-notes/">
+  <link rel="canonical" href="http://snowmantw.github.com/blog/2012/09/19/note-computer-graphics-number-1/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
@@ -66,50 +70,144 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Reading Notes</h1>
+    
+      <h1 class="entry-title">Note: Computer Graphics #1</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-19T13:11:00+08:00" pubdate data-updated="true">Sep 19<span>th</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
-
-  
-  <h2>2012</h2>
-
-<article>
-  
-<h1><a href="/blog/2012/06/23/fwd-i-feel-sorry-for-computer-science-departments/">FWD: I Feel Sorry For Computer Science Departments</a></h1>
-<time datetime="2012-06-23T17:13:00+08:00" pubdate><span class='month'>Jun</span> <span class='day'>23</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/abridged-translation/'>Abridged Translation</a>, <a class='category' href='/blog/categories/computing-science/'>Computing Science</a>, <a class='category' href='/blog/categories/education/'>Education</a>, <a class='category' href='/blog/categories/reading/'>Reading</a>, <a class='category' href='/blog/categories/reading-notes/'>Reading Notes</a></span>
-</footer>
+<div class="entry-content"><ul>
+<li>Shading 是指在面與線的基礎上增加了光線與材質的交互作用層</li>
+<li>Texture 則是加在表面呈現出材質的效果</li>
+<li>Framebuffer 記憶體將儲存運算後的資料，然後顯示器朝之要這些資料並畫出來</li>
+<li>Framebuffer 如何更新是重點之一</li>
+<li>Model-Rendering-Animation 是三個領域</li>
+<li>Pixel 對記憶體就是位元組。比如 4 Bytes 對應到 32 萬色的一個像素</li>
+<li>如果沒有 Shading ，每個面都會同色同光。加上去後才有光影立體的感覺</li>
+<li>Shadow 與 Reflection 則是後面的工作</li>
+</ul>
 
 
-</article>
+<hr />
+
+<ul>
+<li>Rendering Pipline ：平行處理</li>
+<li>轉換觀點：Transformation ，去以相機為準變換整個影像</li>
+<li>Transformer &#8211;> Clipper &#8211;> Projector &#8211;> Rasterizer &#8211;> Pixels</li>
+<li>Transformer 是幾何轉換</li>
+<li>Clipper 把不在視覺中的物體遮掉不顯示</li>
+<li>Rasterizer 從幾何轉換成像素觀點（從平面頂點變為描述哪些像素要被填滿）</li>
+<li>Shading 還在後面。不過為了效率，會在過程中作</li>
+</ul>
 
 
+<hr />
 
-<article>
-  
-<h1><a href="/blog/2012/06/22/helloween-documents-re-reading/">Helloween Documents Re-reading</a></h1>
-<time datetime="2012-06-22T21:31:00+08:00" pubdate><span class='month'>Jun</span> <span class='day'>22</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/reading/'>Reading</a>, <a class='category' href='/blog/categories/reading-notes/'>Reading Notes</a>, <a class='category' href='/blog/categories/software-liberty/'>Software Liberty</a>, <a class='category' href='/blog/categories/thinking/'>Thinking</a></span>
-</footer>
+<ul>
+<li>Global Illumination ：全環境中的光線軌跡。包括散射之類的議題。</li>
+<li>物理光學以外，還有一種是繪圖風格的渲染方式</li>
+</ul>
 
 
-</article>
+<hr />
+
+<ul>
+<li>課程會把 OpenGL 核心功能實做一次</li>
+<li>根據老師的提醒，OpenGL 矩陣存到記憶體順序是 Column Major 。代表順序是從左上開始往下數，最後面是最右下。因此</li>
+</ul>
+
+
+<pre>
+    M[16] == {0,1,2,3,4,5,6,7}
+
+    [ 0  4
+      1  5
+      2  6
+      3  7 ]
+</pre>
+
+
 
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">snowmantw</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-19T13:11:00+08:00" pubdate data-updated="true">Sep 19<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/course-notes/'>Course Notes</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/07/14/an-introduction-to-haskell-components/" title="Previous Post: An Introduction to Haskell Components">&laquo; An Introduction to Haskell Components</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/09/19/note-yesod-web-framework-1/" title="Next Post: Note: Yesod Web Framework #1">Note: Yesod Web Framework #1 &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -310,7 +408,10 @@
       var disqus_shortname = 'snowmantws-blog';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://snowmantw.github.com/blog/2012/09/19/note-computer-graphics-number-1/';
+        var disqus_url = 'http://snowmantw.github.com/blog/2012/09/19/note-computer-graphics-number-1/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

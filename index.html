@@ -9,8 +9,9 @@
   <meta name="author" content="snowmantw">
 
   
-  <meta name="description" content="這是我於 Functional Programming SIG #1 中介紹 Monad 、 Arrow 與
-其他 Haskell 運算元件的簡報。分為 PDF 與 MS 2007 檔案格式，採用 CC BY-NC-SA 方式授權。 最近正在了解 Functional Reactive &hellip;">
+  <meta name="description" content="Foundation.hs Foundation.hs 提供載入資源，以及變成內部資源參照值的函式。
+該檔案中有分為 Route 、基本核心、儲存機制、認證等界面可以自訂，以此定義出應用本身所需要的各資源模組
+Route 是呼叫特定函式，載入 Route 檔案並建立出 AppRoute &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -68,6 +69,155 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/09/19/note-yesod-web-framework-1/">Note: Yesod Web Framework #1</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-19T13:19:00+08:00" pubdate data-updated="true">Sep 19<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/09/19/note-yesod-web-framework-1/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Foundation.hs</h2>
+
+<ul>
+<li>Foundation.hs 提供載入資源，以及變成內部資源參照值的函式。</li>
+<li>該檔案中有分為 Route 、基本核心、儲存機制、認證等界面可以自訂，以此定義出應用本身所需要的各資源模組</li>
+<li>Route 是呼叫特定函式，載入 Route 檔案並建立出 AppRoute</li>
+<li>基本核心包括 Session 後端組件、如何渲染頁面 Widget 、Static 檔案設定等</li>
+<li>Widget 應該說是子頁面，最終要併到 default-layout-wrapper 這種 Wrapper 的樣板檔中</li>
+<li>RenderMessage 是用來把一些預設訊息渲染出來，包括處理 i18n 之類議題的設定 Type Class</li>
+</ul>
+
+
+<h2>Application.hs</h2>
+
+<ul>
+<li>此檔案將建立整個應用</li>
+<li>Handler 也是註冊在這邊。Cabal 檔裡也要記得增加</li>
+<li>其中 makeFoundation 與 makeApplication 將會分別建立資源參照與 WAI 應用，而後者會相依前者。</li>
+<li>makeApplication 另外還會被 main 函式所直接呼叫</li>
+<li>mkYesodDispatch 會建立應用實體，是繼 mkYesodData 所建立好資料後，繼續接手的程式。這個函式也是實際上會建立 YesodSite 的函式。</li>
+<li>從目前看到的只能說 mkYesodDispatch 建立網站本身，makeApplication 建立整個 WAI 應用。( WAI: Web Server 與 Application 的介面<a href="http://www.yesodweb.com/book/web-application-interface" title="Yesod Official Site">^1</a> )</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/09/19/note-computer-graphics-number-1/">Note: Computer Graphics #1</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-19T13:11:00+08:00" pubdate data-updated="true">Sep 19<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/09/19/note-computer-graphics-number-1/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ul>
+<li>Shading 是指在面與線的基礎上增加了光線與材質的交互作用層</li>
+<li>Texture 則是加在表面呈現出材質的效果</li>
+<li>Framebuffer 記憶體將儲存運算後的資料，然後顯示器朝之要這些資料並畫出來</li>
+<li>Framebuffer 如何更新是重點之一</li>
+<li>Model-Rendering-Animation 是三個領域</li>
+<li>Pixel 對記憶體就是位元組。比如 4 Bytes 對應到 32 萬色的一個像素</li>
+<li>如果沒有 Shading ，每個面都會同色同光。加上去後才有光影立體的感覺</li>
+<li>Shadow 與 Reflection 則是後面的工作</li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li>Rendering Pipline ：平行處理</li>
+<li>轉換觀點：Transformation ，去以相機為準變換整個影像</li>
+<li>Transformer &#8211;> Clipper &#8211;> Projector &#8211;> Rasterizer &#8211;> Pixels</li>
+<li>Transformer 是幾何轉換</li>
+<li>Clipper 把不在視覺中的物體遮掉不顯示</li>
+<li>Rasterizer 從幾何轉換成像素觀點（從平面頂點變為描述哪些像素要被填滿）</li>
+<li>Shading 還在後面。不過為了效率，會在過程中作</li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li>Global Illumination ：全環境中的光線軌跡。包括散射之類的議題。</li>
+<li>物理光學以外，還有一種是繪圖風格的渲染方式</li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li>課程會把 OpenGL 核心功能實做一次</li>
+<li>根據老師的提醒，OpenGL 矩陣存到記憶體順序是 Column Major 。代表順序是從左上開始往下數，最後面是最右下。因此</li>
+</ul>
+
+
+<pre>
+    M[16] == {0,1,2,3,4,5,6,7}
+
+    [ 0  4
+      1  5
+      2  6
+      3  7 ]
+</pre>
+
+
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -476,6 +626,14 @@ $  Javascript Developer
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/09/19/note-yesod-web-framework-1/">Note: Yesod Web Framework #1</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/19/note-computer-graphics-number-1/">Note: Computer Graphics #1</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/07/14/an-introduction-to-haskell-components/">An Introduction to Haskell Components</a>
       </li>
     
@@ -485,14 +643,6 @@ $  Javascript Developer
     
       <li class="post">
         <a href="/blog/2012/06/22/reading-applying-hardware-testing-concepts-to-software/">Reading: Applying hardware testing concepts to software</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/06/22/helloween-documents-re-reading/">Helloween Documents Re-reading</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/06/17/yet-another-coder/">Yet Another Coder</a>
       </li>
     
   </ul>
@@ -586,6 +736,27 @@ $  Javascript Developer
 
             <li class="category">
                   <a class='category' href='/blog/categories/presentation/'>Presentation</a>
+            </li>
+        
+            
+            
+
+            <li class="category">
+                  <a class='category' href='/blog/categories/course-notes/'>Course Notes</a>
+            </li>
+        
+            
+            
+
+            <li class="category">
+                  <a class='category' href='/blog/categories/tech-notes/'>Tech Notes</a>
+            </li>
+        
+            
+            
+
+            <li class="category">
+                  <a class='category' href='/blog/categories/web-application/'>Web Application</a>
             </li>
         
       

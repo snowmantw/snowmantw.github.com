@@ -2,36 +2,44 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://snowmantw.github.com/blog/2012/06/17/yet-another-coder/</loc>
-        <lastmod>2012-06-19T22:12:33+08:00</lastmod>
+        <lastmod>2012-09-16T22:18:57+08:00</lastmod>
     </url>
     <url>
         <loc>http://snowmantw.github.com/blog/2012/06/22/helloween-documents-re-reading/</loc>
-        <lastmod>2012-06-22T22:16:20+08:00</lastmod>
+        <lastmod>2012-09-16T22:18:57+08:00</lastmod>
     </url>
     <url>
         <loc>
             http://snowmantw.github.com/blog/2012/06/22/reading-applying-hardware-testing-concepts-to-software/
         </loc>
-        <lastmod>2012-06-23T17:39:58+08:00</lastmod>
+        <lastmod>2012-09-16T22:18:57+08:00</lastmod>
     </url>
     <url>
         <loc>
             http://snowmantw.github.com/blog/2012/06/23/fwd-i-feel-sorry-for-computer-science-departments/
         </loc>
-        <lastmod>2012-06-23T17:39:40+08:00</lastmod>
+        <lastmod>2012-09-16T22:18:57+08:00</lastmod>
     </url>
     <url>
         <loc>
             http://snowmantw.github.com/blog/2012/07/14/an-introduction-to-haskell-components/
         </loc>
-        <lastmod>2012-07-14T09:57:55+08:00</lastmod>
+        <lastmod>2012-09-16T22:18:57+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://snowmantw.github.com/blog/2012/09/19/note-computer-graphics-number-1/</loc>
+        <lastmod>2012-09-19T16:52:05+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://snowmantw.github.com/blog/2012/09/19/note-yesod-web-framework-1/</loc>
+        <lastmod>2012-09-19T16:57:25+08:00</lastmod>
     </url>
     <url>
         <loc>http://snowmantw.github.com/</loc>
-        <lastmod>2012-07-14T09:57:55+08:00</lastmod>
+        <lastmod>2012-09-19T16:57:25+08:00</lastmod>
     </url>
     <url>
         <loc>http://snowmantw.github.com/blog/archives/</loc>
-        <lastmod>2012-07-14T09:57:55+08:00</lastmod>
+        <lastmod>2012-09-19T16:57:25+08:00</lastmod>
     </url>
 </urlset>
