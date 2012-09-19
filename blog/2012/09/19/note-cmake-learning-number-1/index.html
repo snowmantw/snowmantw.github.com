@@ -146,6 +146,9 @@ Cmake 官方網站：命令列表 如果要尋找系統中有沒有特定函式�
 
 <ul>
 <li>這邊的連結參數會影響產生的 Makefile 中所下參數，所以是必要的</li>
+<li><code>include_directory</code> 是指定該次編譯尋找引入檔的目錄路徑（不知道非 C 類是否適用這概念？）</li>
+<li><code>add_subdirectory</code> 則是指定要遞回進子目錄，先作該 CMake 再回來</li>
+<li>有些屬性要自己隨著目錄結構而設定，例如 <code>IMPORTED_LOCATION</code> 就關係到產生函式庫後擺放檔案的位置</li>
 </ul>
 
 
