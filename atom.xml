@@ -4,7 +4,7 @@
   <title><![CDATA[Snowmantw's Blog]]></title>
   <link href="http://snowmantw.github.com/atom.xml" rel="self"/>
   <link href="http://snowmantw.github.com/"/>
-  <updated>2012-09-19T22:02:47+08:00</updated>
+  <updated>2012-09-20T15:33:21+08:00</updated>
   <id>http://snowmantw.github.com/</id>
   <author>
     <name><![CDATA[snowmantw]]></name>
@@ -12,6 +12,28 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Note: Seminar -  Location Service Protocols for Vehicular Ad Hoc Networks Abstract]]></title>
+    <link href="http://snowmantw.github.com/blog/2012/09/20/note-seminar-location-service-protocols-for-vehicular-ad-hoc-networks-abstract/"/>
+    <updated>2012-09-20T15:10:00+08:00</updated>
+    <id>http://snowmantw.github.com/blog/2012/09/20/note-seminar-location-service-protocols-for-vehicular-ad-hoc-networks-abstract</id>
+    <content type="html"><![CDATA[<p>演講人：世新大學 許智順教授</p>
+
+<ul>
+<li>車載通訊網路的研究</li>
+<li>MANET, VANET, VANET+Coast Location Service Protocols</li>
+<li>MANET 是比較早出現的。與 VANET 不太一樣</li>
+<li>Location Service 是指知道別人位置並以知通訊</li>
+<li>基本的車子需要有各種感測器，然後把這些感測器的訊息連接到處理中心，再與伺服器連結</li>
+<li>Ad Hoc Network ：車載隨意網路，包括車間通訊與 Roadside 基地台。放在道路旁邊，負責與網際網路作通訊</li>
+<li>也可以在距離過遠時，以車間通訊作中介，間接的連上Roadside 基地台</li>
+<li>V2V, V2R 就是這兩種網路。OBU 是車載單元，RSU 是基地台單元</li>
+<li></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Note: Cmake Learning #1]]></title>
