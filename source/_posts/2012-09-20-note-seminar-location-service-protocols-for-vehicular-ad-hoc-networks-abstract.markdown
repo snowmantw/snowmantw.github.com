@@ -7,7 +7,7 @@ categories:
 - Seminar Notes
 ---
 
-演講人：世新大學 許智順教授
+演講人：世新大學 許智舜教授
 
 * 車載通訊網路的研究
 * MANET, VANET, VANET+Coast Location Service Protocols
