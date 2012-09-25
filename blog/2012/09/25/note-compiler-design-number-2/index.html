@@ -99,16 +99,30 @@ Identifier 就是一大類 Token 。而如 IntegerConstant 那樣，可能會有
 
 <div class="entry-content"><p><strong>原稿遺失</strong>，補記一些重點</p>
 
+<hr />
+
 <ul>
 <li>Lexeme: 語法剖析的元素</li>
 <li>語法剖析出來的 Token 代表 key/value ，即是該 Lexeme 屬於那一類 Token ，其值為何</li>
 <li>Identifier 就是一大類 Token 。而如 IntegerConstant 那樣，可能會有很多類中有很多種值</li>
-<li><p>Keyword/Reserved Word 差異：前者有先定義但可重載；後者不可重載</p></li>
-<li><p>Formal Language 就是研究這些 Lexeme 對應到的類別之間關係</p></li>
+<li>Keyword/Reserved Word 差異：前者有先定義但可重載；後者不可重載</li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li>Formal Language 就是研究這些 Lexeme 對應到的類別之間關係</li>
 <li>單字構成字串，字串符合文法者稱之句子。所有（有可能無限可數）句子構成語言</li>
 <li>Formal Language 的規則確保所建構出來的語言，針對任意字串都是可決定其是否為句子的</li>
-<li><p>Regexp 用以從文法建構出句子；而 Compiler 則是從句子辨認出文法</p></li>
-<li><p>自動狀態機分為確定與不確定。兩者的差異在於其中的狀態移轉，是否存在同輸入而多個可能移轉的狀態</p></li>
+<li>Regexp 用以從文法建構出句子；而 Compiler 則是從句子辨認出文法</li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li>自動狀態機分為確定與不確定。兩者的差異在於其中的狀態移轉，是否存在同輸入而多個可能移轉的狀態</li>
 <li>確定的版本，雖然可以允許有多個結束狀態，但一定要在輸入全部使用完畢時達到結束狀態，才算完成</li>
 <li>不確定者，其遇到輸入有多個可能移轉時，要「執行」全部可能的移轉。而只要其中一個到達結束狀態時輸入也剛好完畢，就算成功</li>
 <li>前者所述，如果其中一個移轉到達結束狀態，但輸入還未完畢，其他可移轉者要繼續移轉</li>
