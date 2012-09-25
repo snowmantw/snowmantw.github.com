@@ -5,11 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: Computing Science - Snowmantw's Blog</title>
+  <title>Note: Compiler Design #2 - Snowmantw's Blog</title>
   <meta name="author" content="snowmantw">
 
   
-  <meta name="description" content="Category: Computing Science">
+  <meta name="description" content="原稿遺失，補記一些重點 Lexeme: 語法剖析的元素
+語法剖析出來的 Token 代表 key/value ，即是該 Lexeme 屬於那一類 Token ，其值為何
+Identifier 就是一大類 Token 。而如 IntegerConstant 那樣，可能會有很多類中有很多種值 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://snowmantw.github.comblog/categories/computing-science/">
+  <link rel="canonical" href="http://snowmantw.github.com/blog/2012/09/25/note-compiler-design-number-2/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
@@ -66,50 +68,107 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Computing Science</h1>
+    
+      <h1 class="entry-title">Note: Compiler Design #2</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-25T21:57:00+08:00" pubdate data-updated="true">Sep 25<span>th</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p><strong>原稿遺失</strong>，補記一些重點</p>
 
-  
-  <h2>2012</h2>
-
-<article>
-  
-<h1><a href="/blog/2012/07/14/an-introduction-to-haskell-components/">An Introduction to Haskell Components</a></h1>
-<time datetime="2012-07-14T09:10:00+08:00" pubdate><span class='month'>Jul</span> <span class='day'>14</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/community/'>Community</a>, <a class='category' href='/blog/categories/computing-science/'>Computing Science</a>, <a class='category' href='/blog/categories/haskell/'>Haskell</a>, <a class='category' href='/blog/categories/presentation/'>Presentation</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2012/06/23/fwd-i-feel-sorry-for-computer-science-departments/">FWD: I Feel Sorry For Computer Science Departments</a></h1>
-<time datetime="2012-06-23T17:13:00+08:00" pubdate><span class='month'>Jun</span> <span class='day'>23</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/abridged-translation/'>Abridged Translation</a>, <a class='category' href='/blog/categories/computing-science/'>Computing Science</a>, <a class='category' href='/blog/categories/education/'>Education</a>, <a class='category' href='/blog/categories/reading/'>Reading</a>, <a class='category' href='/blog/categories/reading-notes/'>Reading Notes</a></span>
-</footer>
-
-
-</article>
+<ul>
+<li>Lexeme: 語法剖析的元素</li>
+<li>語法剖析出來的 Token 代表 key/value ，即是該 Lexeme 屬於那一類 Token ，其值為何</li>
+<li>Identifier 就是一大類 Token 。而如 IntegerConstant 那樣，可能會有很多類中有很多種值</li>
+<li><p>Keyword/Reserved Word 差異：前者有先定義但可重載；後者不可重載</p></li>
+<li><p>Formal Language 就是研究這些 Lexeme 對應到的類別之間關係</p></li>
+<li>單字構成字串，字串符合文法者稱之句子。所有（有可能無限可數）句子構成語言</li>
+<li>Formal Language 的規則確保所建構出來的語言，針對任意字串都是可決定其是否為句子的</li>
+<li><p>Regexp 用以從文法建構出句子；而 Compiler 則是從句子辨認出文法</p></li>
+<li><p>自動狀態機分為確定與不確定。兩者的差異在於其中的狀態移轉，是否存在同輸入而多個可能移轉的狀態</p></li>
+<li>確定的版本，雖然可以允許有多個結束狀態，但一定要在輸入全部使用完畢時達到結束狀態，才算完成</li>
+<li>不確定者，其遇到輸入有多個可能移轉時，要「執行」全部可能的移轉。而只要其中一個到達結束狀態時輸入也剛好完畢，就算成功</li>
+<li>前者所述，如果其中一個移轉到達結束狀態，但輸入還未完畢，其他可移轉者要繼續移轉</li>
+</ul>
 
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">snowmantw</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-25T21:57:00+08:00" pubdate data-updated="true">Sep 25<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/course-note/'>Course Note</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/09/20/note-seminar-location-service-protocols-for-vehicular-ad-hoc-networks-abstract/" title="Previous Post: Note: Seminar -  Location Service Protocols for Vehicular Ad Hoc Networks Abstract">&laquo; Note: Seminar -  Location Service Protocols for Vehicular Ad Hoc Networks Abstract</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -331,7 +390,10 @@
       var disqus_shortname = 'snowmantws-blog';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://snowmantw.github.com/blog/2012/09/25/note-compiler-design-number-2/';
+        var disqus_url = 'http://snowmantw.github.com/blog/2012/09/25/note-compiler-design-number-2/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

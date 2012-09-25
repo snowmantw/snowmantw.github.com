@@ -9,11 +9,9 @@
   <meta name="author" content="snowmantw">
 
   
-  <meta name="description" content="演講人：世新大學 許智順教授 車載通訊網路的研究
-MANET, VANET, VANET+Coast Location Service Protocols
-MANET 是比較早出現的。與 VANET 不太一樣
-Location Service 是指知道別人位置並以知通訊
-基本的車子需要有各種感測器 &hellip;">
+  <meta name="description" content="原稿遺失，補記一些重點 Lexeme: 語法剖析的元素
+語法剖析出來的 Token 代表 key/value ，即是該 Lexeme 屬於那一類 Token ，其值為何
+Identifier 就是一大類 Token 。而如 IntegerConstant 那樣，可能會有很多類中有很多種值 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -71,6 +69,60 @@ Location Service 是指知道別人位置並以知通訊
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/09/25/note-compiler-design-number-2/">Note: Compiler Design #2</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-25T21:57:00+08:00" pubdate data-updated="true">Sep 25<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/09/25/note-compiler-design-number-2/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><strong>原稿遺失</strong>，補記一些重點</p>
+
+<ul>
+<li>Lexeme: 語法剖析的元素</li>
+<li>語法剖析出來的 Token 代表 key/value ，即是該 Lexeme 屬於那一類 Token ，其值為何</li>
+<li>Identifier 就是一大類 Token 。而如 IntegerConstant 那樣，可能會有很多類中有很多種值</li>
+<li><p>Keyword/Reserved Word 差異：前者有先定義但可重載；後者不可重載</p></li>
+<li><p>Formal Language 就是研究這些 Lexeme 對應到的類別之間關係</p></li>
+<li>單字構成字串，字串符合文法者稱之句子。所有（有可能無限可數）句子構成語言</li>
+<li>Formal Language 的規則確保所建構出來的語言，針對任意字串都是可決定其是否為句子的</li>
+<li><p>Regexp 用以從文法建構出句子；而 Compiler 則是從句子辨認出文法</p></li>
+<li><p>自動狀態機分為確定與不確定。兩者的差異在於其中的狀態移轉，是否存在同輸入而多個可能移轉的狀態</p></li>
+<li>確定的版本，雖然可以允許有多個結束狀態，但一定要在輸入全部使用完畢時達到結束狀態，才算完成</li>
+<li>不確定者，其遇到輸入有多個可能移轉時，要「執行」全部可能的移轉。而只要其中一個到達結束狀態時輸入也剛好完畢，就算成功</li>
+<li>前者所述，如果其中一個移轉到達結束狀態，但輸入還未完畢，其他可移轉者要繼續移轉</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -829,6 +881,10 @@ $  Javascript Developer
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/09/25/note-compiler-design-number-2/">Note: Compiler Design #2</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/09/20/note-seminar-location-service-protocols-for-vehicular-ad-hoc-networks-abstract/">Note: Seminar -  Location Service Protocols for Vehicular Ad Hoc Networks Abstract</a>
       </li>
     
@@ -842,10 +898,6 @@ $  Javascript Developer
     
       <li class="post">
         <a href="/blog/2012/09/19/note-computer-graphics-number-1/">Note: Computer Graphics #1</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/07/14/an-introduction-to-haskell-components/">An Introduction to Haskell Components</a>
       </li>
     
   </ul>
@@ -974,6 +1026,13 @@ $  Javascript Developer
 
             <li class="category">
                   <a class='category' href='/blog/categories/seminar-notes/'>Seminar Notes</a>
+            </li>
+        
+            
+            
+
+            <li class="category">
+                  <a class='category' href='/blog/categories/course-note/'>Course Note</a>
             </li>
         
       
