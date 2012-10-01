@@ -5,12 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - Snowmantw's Blog</title>
+  <title>Note: Computer Graphics #2 - Snowmantw's Blog</title>
   <meta name="author" content="snowmantw">
 
   
-  <meta name="description" content="Blog Archive 2012 Note: Seminar - A Comparison Study on Semantic Web Services and e-Business
-Sep 27 2012 posted in Seminar Notes Note: Computer &hellip;">
+  <meta name="description" content="OpenGL Programming 基本架構 座標系統詞彙 Clipping: 座標空間中所關注的立方區域，鏡頭唯一關注的區域
+Viewpoint: 繪製的座標與視窗的座標映射。螢幕上的視窗系統透過 Viewpoint 提供了映射的方式
+Project: 立體空間對視窗的投影
+Mesh: &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +21,7 @@ Sep 27 2012 posted in Seminar Notes Note: Computer &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://snowmantw.github.com/blog/archives/">
+  <link rel="canonical" href="http://snowmantw.github.com/blog/2012/09/26/note-computer-graphics-number-2/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
@@ -67,190 +69,184 @@ Sep 27 2012 posted in Seminar Notes Note: Computer &hellip;">
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">Note: Computer Graphics #2</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-26T13:10:00+08:00" pubdate data-updated="true">Sep 26<span>th</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><h2>OpenGL Programming 基本架構</h2>
 
-  
-  <h2>2012</h2>
+<h3>座標系統詞彙</h3>
 
-<article>
-  
-<h1><a href="/blog/2012/09/27/note-seminar-a-comparison-study-on-semantic-web-services-and-e-business/">Note: Seminar - A Comparison Study on Semantic Web Services and e-Business</a></h1>
-<time datetime="2012-09-27T15:12:00+08:00" pubdate><span class='month'>Sep</span> <span class='day'>27</span> <span class='year'>2012</span></time>
+<ul>
+<li>Clipping: 座標空間中所關注的立方區域，鏡頭唯一關注的區域</li>
+<li>Viewpoint: 繪製的座標與視窗的座標映射。螢幕上的視窗系統透過 Viewpoint 提供了映射的方式</li>
+<li>Project: 立體空間對視窗的投影</li>
+<li>Mesh: Geometry</li>
+</ul>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/seminar-notes/'>Seminar Notes</a></span>
-</footer>
 
+<h3>OpenGL 歷史</h3>
 
-</article>
+<ul>
+<li>繪圖的工業標準，軟硬體接軌的機制</li>
+<li>最初的版本是把硬體能作到的流程功能做成固定的功能，包括從頂點的立體物件資料，以及平面影像的像素資料，
+作個別的修正後柵格化結合（頂點轉像素），最後處理到 Framebuffer</li>
+<li>第二版後把頂點轉換 (Vertex Shader) 與像素貼圖 (Fragment Shader) 程式化。之前只能設定狀態並丟給硬體作。程式化代表可以對這些過程的方式套用自己的方式，
+不用一定按照預設的硬體方式作</li>
+<li>第三版引入了 Geometry Shader 。這個流程是位於 Vertex Shader 與 Fragment Shader 中間。另外則是開始有向後相容切割的概念，
+即所謂 Full/Forward Compatible Context Type</li>
+<li>第四版於 Geometry Shader 前又引入兩個流程：Tessellation-Control, Tessellation-Evaluation 。前者是曲線中間可以增加點，因此更細分平滑。
+從這邊看出 OpenGL 支援的越多，以前要放出去交給 CPU 運算的部份，就可以用 GPU 去算，增加效能</li>
+<li>幾何資料之後細化處理另一個好處是頂點資料可以相同數目，但效果更細緻，不會增加頻寬的需求</li>
+<li>OpenGL - { OpenCL, WebGL, OpenGL ES }</li>
+</ul>
 
 
+<h3>OpenGL APIs</h3>
 
-<article>
-  
-<h1><a href="/blog/2012/09/26/note-computer-graphics-number-2/">Note: Computer Graphics #2</a></h1>
-<time datetime="2012-09-26T13:10:00+08:00" pubdate><span class='month'>Sep</span> <span class='day'>26</span> <span class='year'>2012</span></time>
+<ul>
+<li>針對每個 OS 與視窗系統的接軌</li>
+<li>GLU 是比起硬體平台上更抽象的，GLUT 則是跨平台的 Toolkit</li>
+<li>命名慣例：<code>gl</code> 代表 OpenGL 提供的功能；<code>glu</code> 代表 GLU 提供</li>
+<li>GL - GLU || OS/Window System - GLX,AGL,WGL ：前者提供繪圖，後者提供輔助視窗必要的功能。GLUT 則是跨兩者</li>
+<li><code>gl.h</code> 一直維持在 OpenGL 1.1 ；因此額外功能需要用 <code>glext.h</code> 去增加。但因為硬體實做不一致，所以該函式庫要作手動連結等。而 <code>glee.h</code> 就是自動處理的函式庫</li>
+<li>OpenGL 資料型別自訂浮點數等是因為要跨平台</li>
+</ul>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/course-note/'>Course Note</a></span>
-</footer>
 
+<h2>GLUT and Application</h2>
 
-</article>
+<ul>
+<li>應用結構：主函式中的主迴圈，然後透過事件處理函式去作各功能</li>
+<li>應用中都用 GLUT 設定顯示模式（如 RGB）、建立視窗、顯示事件分派函式、鍵盤事件分派函式&#8230;最後是呼叫 GLUT 的主迴圈功能</li>
+<li>GLUT 做好視窗的建立與模式後，還需要作 OpenGL 本身的設定。包括設定色彩深度與開啟對應狀態等</li>
+<li>GLUT 的顯示分派函式是用函式指標註冊進 <code>glutDisplayFunc</code> 中。這部份當有顯示需求時就會被呼叫</li>
+<li><code>glutSwapByffers</code>: 前景與背景 Buffer 。後面畫完交換到前面用，也就是繪製與顯示是分開的，除非該 Buffer 被推到前面</li>
+<li>要繪製通常是先清除再顯示。因此在其他的函式中作繪圖，若是之後又執行到有清除的函式，就會沒有顯示效果</li>
+<li><code>glFlush</code>  是強制把繪圖指令都送出。因為 GPU/CPU 溝通上可能有同步的問題，可能 GPU 還沒畫完 CPU 就在執行下一步了。因此會用這個</li>
+<li><code>glBegin</code> 與 <code>glEnd</code> 中間的各指令就是用來畫的繪製區間</li>
+<li><code>glutIdleFunc</code> 動畫時可用。因為若是沒有事件，就只有 Idle 事件</li>
+<li><code>glutPostRedisplay</code> 則是產生一個事件，注意 Post 。執行後，下次進入主事件迴圈時會有一個待處理的顯示事件，因此動畫就可以順著用顯示的函式處理</li>
+</ul>
 
 
+<h2>Elementary Rendering</h2>
 
-<article>
-  
-<h1><a href="/blog/2012/09/25/note-compiler-design-number-2/">Note: Compiler Design #2</a></h1>
-<time datetime="2012-09-25T21:57:00+08:00" pubdate><span class='month'>Sep</span> <span class='day'>25</span> <span class='year'>2012</span></time>
+<h3>幾何元件</h3>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/course-note/'>Course Note</a></span>
-</footer>
+<ul>
+<li>OpenGL 有支援幾種基本幾何元件</li>
+<li>繪製時要注意頂點順序左下開始逆時針</li>
+<li><code>glVertex3fv</code> 為例，命名如下
 
+<ul>
+<li>gl: OpenGL 前綴</li>
+<li>3: 維度，影響有多少參數</li>
+<li>f: 傳入資料型別</li>
+<li>v: 有的話則是傳入陣列（Vector)</li>
+</ul>
+</li>
+<li>新的寫法不再用 <code>glBegin</code> 等方式描述，而是使用 Buffer 相關的方式</li>
+<li>Buffer 化的表示法是用一個叫做 Display List 的概念去存，然後繪圖的時候直接畫出來</li>
+</ul>
 
-</article>
 
+<hr />
 
+<ul>
+<li>可以用一些函式作狀態與特色的設定、開閉等</li>
+<li>OpenGL 座標以左下角作零點，所以滑鼠座標可能要反轉</li>
+</ul>
 
-<article>
-  
-<h1><a href="/blog/2012/09/20/note-seminar-location-service-protocols-for-vehicular-ad-hoc-networks-abstract/">Note: Seminar -  Location Service Protocols for Vehicular Ad Hoc Networks Abstract</a></h1>
-<time datetime="2012-09-20T15:10:00+08:00" pubdate><span class='month'>Sep</span> <span class='day'>20</span> <span class='year'>2012</span></time>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/seminar-notes/'>Seminar Notes</a></span>
-</footer>
+<h3>遞迴範例：碎形</h3>
 
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2012/09/19/note-cmake-learning-number-1/">Note: Cmake Learning #1</a></h1>
-<time datetime="2012-09-19T20:32:00+08:00" pubdate><span class='month'>Sep</span> <span class='day'>19</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/cmake/'>Cmake</a>, <a class='category' href='/blog/categories/tech-notes/'>Tech Notes</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2012/09/19/note-yesod-web-framework-1/">Note: Yesod Web Framework #1</a></h1>
-<time datetime="2012-09-19T13:19:00+08:00" pubdate><span class='month'>Sep</span> <span class='day'>19</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/haskell/'>Haskell</a>, <a class='category' href='/blog/categories/tech-notes/'>Tech Notes</a>, <a class='category' href='/blog/categories/web-application/'>Web Application</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2012/09/19/note-computer-graphics-number-1/">Note: Computer Graphics #1</a></h1>
-<time datetime="2012-09-19T13:11:00+08:00" pubdate><span class='month'>Sep</span> <span class='day'>19</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/course-notes/'>Course Notes</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2012/07/14/an-introduction-to-haskell-components/">An Introduction to Haskell Components</a></h1>
-<time datetime="2012-07-14T09:10:00+08:00" pubdate><span class='month'>Jul</span> <span class='day'>14</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/community/'>Community</a>, <a class='category' href='/blog/categories/computing-science/'>Computing Science</a>, <a class='category' href='/blog/categories/haskell/'>Haskell</a>, <a class='category' href='/blog/categories/presentation/'>Presentation</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2012/06/23/fwd-i-feel-sorry-for-computer-science-departments/">FWD: I Feel Sorry For Computer Science Departments</a></h1>
-<time datetime="2012-06-23T17:13:00+08:00" pubdate><span class='month'>Jun</span> <span class='day'>23</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/abridged-translation/'>Abridged Translation</a>, <a class='category' href='/blog/categories/computing-science/'>Computing Science</a>, <a class='category' href='/blog/categories/education/'>Education</a>, <a class='category' href='/blog/categories/reading/'>Reading</a>, <a class='category' href='/blog/categories/reading-notes/'>Reading Notes</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2012/06/22/reading-applying-hardware-testing-concepts-to-software/">Reading: Applying hardware testing concepts to software</a></h1>
-<time datetime="2012-06-22T22:13:00+08:00" pubdate><span class='month'>Jun</span> <span class='day'>22</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/reading/'>Reading</a>, <a class='category' href='/blog/categories/software-testing/'>Software Testing</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2012/06/22/helloween-documents-re-reading/">Helloween Documents Re-reading</a></h1>
-<time datetime="2012-06-22T21:31:00+08:00" pubdate><span class='month'>Jun</span> <span class='day'>22</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/reading/'>Reading</a>, <a class='category' href='/blog/categories/reading-notes/'>Reading Notes</a>, <a class='category' href='/blog/categories/software-liberty/'>Software Liberty</a>, <a class='category' href='/blog/categories/thinking/'>Thinking</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2012/06/17/yet-another-coder/">Yet Another Coder</a></h1>
-<time datetime="2012-06-17T15:07:00+08:00" pubdate><span class='month'>Jun</span> <span class='day'>17</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/about-me/'>About Me</a></span>
-</footer>
-
-
-</article>
+<ul>
+<li>以基本三角形的三邊中點作遞迴，做出的三角形繼續作遞迴</li>
+</ul>
 
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">snowmantw</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-26T13:10:00+08:00" pubdate data-updated="true">Sep 26<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/course-note/'>Course Note</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/09/25/note-compiler-design-number-2/" title="Previous Post: Note: Compiler Design #2">&laquo; Note: Compiler Design #2</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/09/27/note-seminar-a-comparison-study-on-semantic-web-services-and-e-business/" title="Next Post: Note: Seminar - A Comparison Study on Semantic Web Services and e-Business">Note: Seminar - A Comparison Study on Semantic Web Services and e-Business &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -472,7 +468,10 @@ Sep 27 2012 posted in Seminar Notes Note: Computer &hellip;">
       var disqus_shortname = 'snowmantws-blog';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://snowmantw.github.com/blog/2012/09/26/note-computer-graphics-number-2/';
+        var disqus_url = 'http://snowmantw.github.com/blog/2012/09/26/note-computer-graphics-number-2/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
